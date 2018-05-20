@@ -9,13 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ljr-web</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>web-home</module>
-        <module>web-core</module>
-        <module>web-war</module>
-    </modules>
+    <artifactId>design-pattern</artifactId>
 
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
 </project>
