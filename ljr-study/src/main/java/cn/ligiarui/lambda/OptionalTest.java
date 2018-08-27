@@ -16,6 +16,8 @@ public class OptionalTest {
                 filter(u-> u.getName() == "name").
                 orElseGet(()->new User("no one","no password"));
         System.out.println(option.getName());
+
+
     }
 
     static class User{
