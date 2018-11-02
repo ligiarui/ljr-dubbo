@@ -11,22 +11,32 @@ import java.net.Socket;
  **/
 public class SocketServer {
 
-    private ServerSocket serverSocket;
+    private static ServerSocket serverSocket;
 
     public SocketServer(ServerSocket serverSocket) {
         this.serverSocket = serverSocket;
     }
 
-    public void accept(){
-        while(true){
+    public static void accept(){
+        Socket socket = null;
             try{
-                Socket socket = serverSocket.accept();
+                serverSocket = new ServerSocket(7777);
+                System.out.println("服务端已启动，端口号:" + 7777);
+                while(true){
+                socket = serverSocket.accept();
                 Thread t = new Thread(new SocketHandler(socket));
                 t.start();
+                }
             } catch (IOException e) {
                 e.getLocalizedMessage();
+            } finally {
+                try {
+                    if(socket != null){
+                        socket.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-
-        }
     }
 }

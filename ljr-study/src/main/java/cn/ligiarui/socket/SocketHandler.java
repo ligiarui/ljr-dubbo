@@ -22,8 +22,9 @@ public class SocketHandler implements Runnable {
     public void run() {
         try{
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            while (reader.readLine() != null) {
-                System.out.println(reader.readLine());
+            String msg;
+            while ((msg =reader.readLine()) != null) {
+                System.out.println("服务端接收到数据:" + msg);
             }
         } catch (IOException e) {
             e.getLocalizedMessage();

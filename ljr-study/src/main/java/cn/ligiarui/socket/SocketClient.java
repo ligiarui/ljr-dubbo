@@ -1,6 +1,7 @@
 package cn.ligiarui.socket;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.Socket;
 
 /**
@@ -10,15 +11,34 @@ import java.net.Socket;
  **/
 public class SocketClient {
 
-    private int PORT = 7777;
+    private static int PORT = 7777;
 
-    private String IP = "127.0.0.1";
+    private static String IP = "127.0.0.1";
 
-    public void send(){
+    private static int i = 0;
+
+    public static void send(){
+        Socket socket = null;
+        PrintWriter out = null;
         try{
-            Socket socket = new Socket(IP,PORT);
+            i++;
+            socket = new Socket(IP,PORT);
+            System.out.println("客户端第"+i+"次发送请求");
+            out = new PrintWriter(socket.getOutputStream(), true);
+            out.println("请求"+i);
         } catch (IOException e){
             e.getLocalizedMessage();
+        } finally {
+            if(out != null){
+                out.close();
+            }
+            if(socket != null) {
+                try {
+                    socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
     }
