@@ -1,4 +1,4 @@
-package cn.ligiarui;
+package cn.ligiarui.nio;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,7 +16,7 @@ import java.nio.file.Paths;
  * @author: lijiarui
  * @create: 2018-11-08 16:40
  **/
-public class nio {
+public class FileNio {
 
     public static void main(String[] args) {
         FileOutputStream out =null;
