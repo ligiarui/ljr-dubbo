@@ -4,7 +4,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- * @description:
+ * @description:https://www.cnblogs.com/dolphin0520/p/3920397.html
  * @author: lijiarui
  * @create: 2018-12-17 16:44
  **/
