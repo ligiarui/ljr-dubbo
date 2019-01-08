@@ -15,7 +15,7 @@ public class LockDemo implements Runnable{
     static  int i = 0;
 
     public static void main(String[] args) {
-            for(int i =0;i<1000;i++){
+            for(int i =0;i<1;i++){
                 Thread t = new Thread(new LockDemo());
                 t.start();
             }
@@ -27,5 +27,8 @@ public class LockDemo implements Runnable{
         i++;
         lock.unlock();
         System.out.println(Thread.currentThread().getName()+ "========i:" + i);
+        for(;;){
+
+        }
     }
 }
